@@ -2,12 +2,12 @@
 #include <cmath>
 using namespace std;
 
-// A function that determines whether a number has divisors
+// Функция, которая определяет есть ли у числа делители
 bool IsPrime(int N) {
-    // It is sufficient to check divisors up to the square root of N
+    // Достаточно проверять делители до квадратного корня из N
     int n = sqrt(N);
     
-    // We skip even divisors
+    // Пропускаем четные делители
     for (int i = 3; i <= n; i += 2)
         if ((N % i) == 0) 
             return false;
@@ -26,13 +26,13 @@ int main() {
     
     cout << "1-" << min(N, 20) << ":  2  ";
     
-    // We go through the odd numbers, since there are no even prime numbers other than 2
+    // Проходимся по нечётным числам, т.к. помимо 2 не существует простых четных чисел
     for (int i = 3; i <= N; i += 2) {
-        // Breaking into blocks of 20 numbers
+        // Разбиение в блоки по 20 чисел
         if (((i - 1) % 20) == 0)
             cout << "\n" << i << "-" << min(N, i+19) << ":  ";
         
-        // Calling the function to check for primality
+        // Вызов функции для проверки на простоту
         if (IsPrime(i))
             cout << i << "  ";
     }
