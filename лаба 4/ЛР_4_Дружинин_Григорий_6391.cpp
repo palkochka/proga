@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
 
+void swap(long long& A, long long& B) {
+    long long temp = A;
+    A = B;
+    B = temp;
+}
+
 // Реализация обычной пузырьковой сортировки
 void BubbleSort(long long* arr) {
     for (int i = 0; i < 14; ++i)
